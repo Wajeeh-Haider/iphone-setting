@@ -1,16 +1,3 @@
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
-import { Feather, FontAwesome } from "react-native-vector-icons";
-import MainCard from "./component/MainCard";
-import CardText from "./component/CardText";
-import Cards from "./component/Cards";
-
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/Home";
