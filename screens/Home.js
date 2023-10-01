@@ -15,12 +15,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ marginTop: 50, paddingLeft: 15, paddingRight: 15 }}>
-        <Text
-          style={styles.text}
-          onPress={() => navigation.navigate("General")}
-        >
-          Settings
-        </Text>
+        <Text style={styles.text}>Settings</Text>
         <View style={styles.input}>
           <Feather name="search" style={styles.inputIcon} />
           <TextInput style={styles.inputText} placeholder="Search" />
@@ -30,7 +25,7 @@ export default function HomeScreen({ navigation }) {
 
         <CardText heading={"Finishing Setting Up Your iPhone"} setting={true} />
 
-        <Cards />
+        <Cards navigation={navigation} />
       </ScrollView>
     </SafeAreaView>
   );

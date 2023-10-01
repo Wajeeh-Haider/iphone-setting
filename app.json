@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "iphone",
-    "slug": "iphone",
+    "slug": "iphone-settings",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.wajeehshah.iphonesettings"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.wajeehshah.iphonesettings"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "eb766816-0b8e-4e4d-b928-bf7bd5336989"
+      }
+    },
+    "owner": "wajeehshah"
   }
 }

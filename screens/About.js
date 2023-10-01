@@ -10,7 +10,7 @@ import {
 import { MaterialIcons } from "react-native-vector-icons";
 import FirebaseData from "../hooks/FirebaseData";
 
-export default About = ({ navigation }) => {
+const About = ({ navigation }) => {
   const { user } = FirebaseData();
 
   const aboutData = [
@@ -148,18 +148,26 @@ export default About = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F2F1F6" }}>
       <ScrollView style={{ marginTop: 50, paddingLeft: 15, paddingRight: 15 }}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <MaterialIcons
-            name="arrow-back-ios"
-            style={styles.icon}
-            onPress={() => navigation.navigate("Home")}
-          />
-          <Text style={styles.text} onPress={() => navigation.navigate("Home")}>
-            Settings
-          </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <TouchableOpacity
+            style={{ flexDirection: "row", alignItems: "center" }}
+            onPress={() => navigation.navigate("General")}
+          >
+            <MaterialIcons name="arrow-back-ios" style={styles.icon} />
+            <Text style={styles.text}>General</Text>
+          </TouchableOpacity>
 
           <View>
-            <Text style={styles.generalText}>General</Text>
+            <Text style={styles.generalText}>About</Text>
+          </View>
+          <View style={{ opacity: 0, height: 0 }}>
+            <Text> About</Text>
           </View>
         </View>
 
@@ -233,6 +241,8 @@ export default About = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+
+export default About;
 
 const styles = StyleSheet.create({
   icon: {

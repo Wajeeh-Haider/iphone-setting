@@ -36,23 +36,32 @@ const General = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F2F1F6" }}>
       <ScrollView style={{ marginTop: 50, paddingLeft: 15, paddingRight: 15 }}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <MaterialIcons
-            name="arrow-back-ios"
-            style={styles.icon}
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <TouchableOpacity
+            style={{ flexDirection: "row", alignItems: "center" }}
             onPress={() => navigation.navigate("Home")}
-          />
-          <Text style={styles.text} onPress={() => navigation.navigate("Home")}>
-            Settings
-          </Text>
+          >
+            <MaterialIcons name="arrow-back-ios" style={styles.icon} />
+            <Text style={styles.text}>Settings</Text>
+          </TouchableOpacity>
 
           <View>
             <Text style={styles.generalText}>General</Text>
+          </View>
+          <View style={{ opacity: 0, height: 0 }}>
+            <Text> General</Text>
           </View>
         </View>
 
         <View style={{ marginTop: 20 }}>
           {generalScreenData.map((item, index) => {
+            const title = item.split(" ").join("");
             return (
               <View
                 key={index}
@@ -61,14 +70,10 @@ const General = ({ navigation }) => {
                   alignItems: "center",
                   backgroundColor: item !== "seprator" ? "white" : "#F2F1F6",
                   paddingVertical: 10,
-                  borderTopLeftRadius:
-                    topRadius[item.split(" ").join("")] && 10,
-                  borderTopRightRadius:
-                    topRadius[item.split(" ").join("")] && 10,
-                  borderBottomLeftRadius:
-                    bottomRadius[item.split(" ").join("")] && 10,
-                  borderBottomRightRadius:
-                    bottomRadius[item.split(" ").join("")] && 10,
+                  borderTopLeftRadius: topRadius[title] && 10,
+                  borderTopRightRadius: topRadius[title] && 10,
+                  borderBottomLeftRadius: bottomRadius[title] && 10,
+                  borderBottomRightRadius: bottomRadius[title] && 10,
                 }}
               >
                 {item !== "seprator" && (
@@ -131,6 +136,7 @@ const styles = StyleSheet.create({
   },
   generalText: {
     fontSize: 20,
-    textAlign: "center",
+    margin: 0,
+    padding: 0,
   },
 });
