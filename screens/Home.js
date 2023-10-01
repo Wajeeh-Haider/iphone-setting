@@ -5,6 +5,7 @@ import {
   Text,
   TextInput,
   View,
+  StatusBar,
 } from "react-native";
 import { Feather, FontAwesome } from "react-native-vector-icons";
 import MainCard from "../component/MainCard";
@@ -14,7 +15,12 @@ import Cards from "../component/Cards";
 export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={{ marginTop: 50, paddingLeft: 15, paddingRight: 15 }}>
+      <ScrollView
+        style={{
+          marginTop: StatusBar.currentHeight,
+          paddingHorizontal: 15,
+        }}
+      >
         <Text style={styles.text}>Settings</Text>
         <View style={styles.input}>
           <Feather name="search" style={styles.inputIcon} />
@@ -47,6 +53,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 30,
     fontWeight: "bold",
+    paddingTop: 20,
   },
 
   input: {

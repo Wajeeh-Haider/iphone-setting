@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  StatusBar,
 } from "react-native";
 import { MaterialIcons } from "react-native-vector-icons";
 import { generalScreenData } from "../data/HomeScreenData";
@@ -35,12 +36,19 @@ const General = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F2F1F6" }}>
-      <ScrollView style={{ marginTop: 50, paddingLeft: 15, paddingRight: 15 }}>
+      <ScrollView
+        style={{
+          marginTop: StatusBar.currentHeight,
+          paddingLeft: 15,
+          paddingRight: 15,
+        }}
+      >
         <View
           style={{
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-between",
+            marginTop: 20,
           }}
         >
           <TouchableOpacity
