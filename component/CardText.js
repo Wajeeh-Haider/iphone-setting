@@ -9,11 +9,11 @@ const CardText = ({ heading, setting }) => {
         flexDirection: "row",
         alignItems: "center",
 
-        paddingBottom: !setting && 10,
+        paddingBottom: !setting && 6,
         marginVertical: setting ? 36 : 0,
         backgroundColor: setting ? "white" : null,
-        borderRadius: setting ? 15 : 0,
-        paddingVertical: setting ? 16 : 0,
+        borderRadius: setting ? 12 : 0,
+        paddingVertical: setting ? 8 : 0,
       }}
     >
       <Text
@@ -22,7 +22,7 @@ const CardText = ({ heading, setting }) => {
         {heading}
       </Text>
       <View style={style.circle}>
-        <Text style={{ fontSize: 16, color: "white" }}>1</Text>
+        <Text style={{ fontSize: 14, color: "white" }}>1</Text>
       </View>
       <View>
         <MaterialIcons name="arrow-forward-ios" style={style.icon} />
@@ -33,9 +33,9 @@ const CardText = ({ heading, setting }) => {
 
 const style = StyleSheet.create({
   circle: {
-    paddingVertical: 4,
-    paddingHorizontal: 10,
-    borderRadius: 80,
+    paddingVertical: 3,
+    paddingHorizontal: 9,
+    borderRadius: 50,
     backgroundColor: "red",
     marginRight: 15,
   },

@@ -17,16 +17,22 @@ const MainCard = () => {
     >
       <View style={style.container}>
         <View style={style.circle}>
-          <Text style={style.name}>{`${user !== null && user?.firstName[0]}${
-            user !== null && user?.lastName[0] === " " ? "" : user?.lastName[0]
+          <Text style={style.name}>{`${
+            user !== null ? user?.firstName[0] : ""
+          }${
+            user !== null
+              ? user?.lastName[0] === " "
+                ? ""
+                : user?.lastName[0]
+              : ""
           }`}</Text>
         </View>
 
         <View style={style.textview}>
           <View style={{ flex: 1 }}>
-            <Text style={style.title}>{`${user !== null && user?.firstName} ${
-              user !== null && user?.lastName
-            }`}</Text>
+            <Text style={style.title}>{`${
+              user !== null ? user?.firstName : ""
+            } ${user !== null ? user?.lastName : ""}`}</Text>
             <Text>Apple ID, iCloud+, Media {"\n"}& Purchases</Text>
           </View>
           <View style={{ alignSelf: "center" }}>

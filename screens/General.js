@@ -44,12 +44,7 @@ const General = ({ navigation }) => {
         }}
       >
         <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: 20,
-          }}
+          style={{ flexDirection: "row", alignItems: "center", marginTop: 20 }}
         >
           <TouchableOpacity
             style={{ flexDirection: "row", alignItems: "center" }}
@@ -59,11 +54,10 @@ const General = ({ navigation }) => {
             <Text style={styles.text}>Settings</Text>
           </TouchableOpacity>
 
-          <View>
+          <View
+            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+          >
             <Text style={styles.generalText}>General</Text>
-          </View>
-          <View style={{ opacity: 0, height: 0 }}>
-            <Text> General</Text>
           </View>
         </View>
 
@@ -77,11 +71,11 @@ const General = ({ navigation }) => {
                   flexDirection: "row",
                   alignItems: "center",
                   backgroundColor: item !== "seprator" ? "white" : "#F2F1F6",
-                  paddingVertical: 10,
-                  borderTopLeftRadius: topRadius[title] && 10,
-                  borderTopRightRadius: topRadius[title] && 10,
-                  borderBottomLeftRadius: bottomRadius[title] && 10,
-                  borderBottomRightRadius: bottomRadius[title] && 10,
+                  paddingVertical: item !== "seprator" ? 8 : 15,
+                  borderTopLeftRadius: topRadius[title] && 12,
+                  borderTopRightRadius: topRadius[title] && 12,
+                  borderBottomLeftRadius: bottomRadius[title] && 12,
+                  borderBottomRightRadius: bottomRadius[title] && 12,
                 }}
               >
                 {item !== "seprator" && (
@@ -90,6 +84,10 @@ const General = ({ navigation }) => {
                       flex: 1,
                       flexDirection: "row",
                       alignItems: "center",
+                      borderBottomWidth: bottomRadius[title] ? 0 : 1,
+                      borderBottomColor: "#F0F0F0",
+                      paddingBottom: bottomRadius[title] ? 0 : 6,
+                      marginLeft: 15,
                     }}
                     onPress={() =>
                       item === "About" && navigation.navigate("About")
@@ -99,9 +97,7 @@ const General = ({ navigation }) => {
                       style={{
                         flex: 1,
                         fontSize: 15,
-                        fontWeight: "300",
-                        marginLeft: 15,
-                        color: item !== "Shutdown" ? "#000" : "#0A84FF",
+                        color: item !== "Shutdown" ? "black" : "#0A84FF",
                       }}
                     >
                       {item}
@@ -144,7 +140,6 @@ const styles = StyleSheet.create({
   },
   generalText: {
     fontSize: 20,
-    margin: 0,
-    padding: 0,
+    marginRight: 90,
   },
 });

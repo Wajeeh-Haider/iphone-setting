@@ -39,10 +39,10 @@ const Cards = ({ navigation }) => {
               paddingLeft: 10,
               backgroundColor: item?.title !== "seprator" ? "white" : "#F2F1F6",
               paddingVertical: 10,
-              borderTopLeftRadius: topRadius[title] && 6,
-              borderTopRightRadius: topRadius[title] && 6,
-              borderBottomLeftRadius: bottomRadius[title] && 6,
-              borderBottomRightRadius: bottomRadius[title] && 6,
+              borderTopLeftRadius: topRadius[title] && 12,
+              borderTopRightRadius: topRadius[title] && 12,
+              borderBottomLeftRadius: bottomRadius[title] && 12,
+              borderBottomRightRadius: bottomRadius[title] && 12,
             }}
           >
             {item.title !== "seprator" && (

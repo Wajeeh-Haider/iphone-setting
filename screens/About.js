@@ -156,12 +156,7 @@ const About = ({ navigation }) => {
         }}
       >
         <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: 20,
-          }}
+          style={{ flexDirection: "row", alignItems: "center", marginTop: 20 }}
         >
           <TouchableOpacity
             style={{ flexDirection: "row", alignItems: "center" }}
@@ -171,16 +166,15 @@ const About = ({ navigation }) => {
             <Text style={styles.text}>General</Text>
           </TouchableOpacity>
 
-          <View>
+          <View
+            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+          >
             <Text style={styles.generalText}>About</Text>
           </View>
-          <View style={{ opacity: 0, height: 0 }}>
-            <Text> About</Text>
-          </View>
         </View>
-
         <View style={{ marginTop: 20 }}>
           {aboutData.map((item, index) => {
+            const title = item?.title.split(" ").join("");
             return (
               <View
                 key={index}
@@ -189,15 +183,11 @@ const About = ({ navigation }) => {
                   alignItems: "center",
                   backgroundColor:
                     item?.title !== "seprator" ? "white" : "#F2F1F6",
-                  paddingVertical: 10,
-                  borderTopLeftRadius:
-                    topRadius[item?.title.split(" ").join("")] && 6,
-                  borderTopRightRadius:
-                    topRadius[item?.title.split(" ").join("")] && 6,
-                  borderBottomLeftRadius:
-                    bottomRadius[item?.title.split(" ").join("")] && 6,
-                  borderBottomRightRadius:
-                    bottomRadius[item?.title.split(" ").join("")] && 6,
+                  paddingVertical: item.title !== "seprator" ? 8 : 15,
+                  borderTopLeftRadius: topRadius[title] && 12,
+                  borderTopRightRadius: topRadius[title] && 12,
+                  borderBottomLeftRadius: bottomRadius[title] && 12,
+                  borderBottomRightRadius: bottomRadius[title] && 12,
                 }}
               >
                 {item?.title !== "seprator" && (
@@ -206,6 +196,14 @@ const About = ({ navigation }) => {
                       flex: 1,
                       flexDirection: "row",
                       alignItems: "center",
+                      borderBottomWidth: bottomRadius[title] ? 0 : 1,
+                      borderBottomColor: "#F0F0F0",
+                      paddingBottom: bottomRadius[title] ? 0 : 6,
+                      marginLeft: 15,
+                      borderBottomWidth: bottomRadius[title] ? 0 : 1,
+                      borderBottomColor: "#F0F0F0",
+                      paddingBottom: bottomRadius[title] ? 0 : 6,
+                      marginLeft: 15,
                     }}
                     onPress={() =>
                       item?.title === "About" && navigation.navigate("About")
@@ -215,8 +213,6 @@ const About = ({ navigation }) => {
                       style={{
                         flex: 1,
                         fontSize: 15,
-                        fontWeight: "300",
-                        marginLeft: 15,
                       }}
                     >
                       {item.title}
@@ -254,7 +250,7 @@ export default About;
 
 const styles = StyleSheet.create({
   icon: {
-    fontSize: 25,
+    fontSize: 20,
     color: "#0A84FF",
   },
   iconForward: {
@@ -268,6 +264,6 @@ const styles = StyleSheet.create({
   },
   generalText: {
     fontSize: 20,
-    textAlign: "center",
+    marginRight: 90,
   },
 });
