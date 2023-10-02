@@ -479,27 +479,21 @@ export const generalScreenData = [
   "Picture in Picture",
   "CarPlay",
   "seprator",
-
   "Home Button",
   "seprator",
-
   "iPhone Storage",
   "Background App Refresh",
   "seprator",
-
   "Date & Time",
   "Keyboard",
   "Fonts",
   "Language and Region",
   "Dictionary",
   "seprator",
-
   "VPN and Device Management",
   "seprator",
-
   "Legal & Reulatory",
   "seprator",
-
   "Transfer or Reset iphone",
   "Shutdown",
   "seprator",
